@@ -30,3 +30,46 @@
     Александр  
     Александра
 </details>
+
+## Установка
+* соберите контейнеры
+```commandline
+docker-compose up -d --build
+```
+* войдите в контейнер
+```commandline
+docker exec -it photo_manager_drf-web bash
+```
+* выполните миграции
+```commandline
+python manage.py makemigrations
+```
+```commandline
+python manage.py migrate
+```
+* выполнить копирование и заполнить константы по шаблону в файле
+```commandline
+cp .env.example .env
+```
+
+## Приложение
+* Получить доступ к приложению
+```djangourlpath
+http://localhost:8000/
+http://localhost:8000/api/v1/manager/
+```
+
+* Информация об API
+```djangourlpath
+http://localhost:8000/docs/
+```
+
+* Регистрация пользователя
+```djangourlpath
+http://localhost:8000/api/v1/auth/users/
+```
+
+* Получить токен
+```djangourlpath
+http://localhost:8000/api/v1/auth/jwt/create
+```

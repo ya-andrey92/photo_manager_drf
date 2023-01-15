@@ -11,6 +11,9 @@ class Photo(models.Model):
                                     on_delete=models.SET_NULL)
     humans = models.ManyToManyField('Human', blank=True)
 
+    class Meta:
+        ordering = ['-created_at']
+
 
 class Geolocation(models.Model):
     name = models.CharField(max_length=255, db_index=True)

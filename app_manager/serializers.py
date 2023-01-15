@@ -43,3 +43,7 @@ class PhotoSerializer(serializers.ModelSerializer):
             validated_data['humans'] = humans_obj
 
         return super().create(validated_data)
+
+
+class AutocompleteSerializer(serializers.Serializer):
+    name = serializers.CharField(max_length=100)
